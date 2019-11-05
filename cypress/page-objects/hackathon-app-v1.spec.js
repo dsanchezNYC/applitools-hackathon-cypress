@@ -25,6 +25,12 @@ export class HackathonAppV1 {
         return cy.get('#alertEmpty')
     }
 
+    errorUsernamePassword(){
+        return cy.get('#random_id_2')
+    }
+
+    
+
     formArea(){
         return cy.get('form')
     }

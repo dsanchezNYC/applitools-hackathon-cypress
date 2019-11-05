@@ -34,6 +34,22 @@ describe('Hackathon App V1 tests', () => {
     })
 
     it('Data-driven test', () => {
+        //a. If you don’t enter the username and password and click the login button, it should throw an error
+        lpv1.loginButton().click()
+        lpv1.errorUsernamePassword().should('be.visible')
+
+        //b. If you only enter the username and click the login button, it should throw an error
+        lpv1.usernameField().type('test')
+        lpv1.loginButton().click()
+
+        //c. If you only enter the password and click the login button, it should throw an error
+        lpv1.passwordField().type('test')
+        lpv1.loginButton().click()
+
+        //d. If you enter both username (any value) and password (any value), it should log you in.
+        lpv1.usernameIcon().type('test')
+        lpv1.passwordField().type('test')
+        lpv1.loginButton().click()
 
     })
 
