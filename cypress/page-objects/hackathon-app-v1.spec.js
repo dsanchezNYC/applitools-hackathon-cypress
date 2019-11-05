@@ -26,9 +26,8 @@ export class HackathonAppV1 {
     }
 
     errorUsernamePassword(){
-        return cy.get('#random_id_2')
+        return cy.get('#random_id_2') //Update for random locator
     }
-
     
 
     formArea(){
