@@ -2,17 +2,20 @@
 
 import { LoginPageV1 } from "../page-objects/v1-login-page.spec"
 import { HomePageV1 } from "../page-objects/v1-home-page.spec"
+import { ChartPageV1 } from "../page-objects/v1-chart-page.spec"
 
 describe('Hackathon App V1 tests', () => {
 
     const lpv1 = new LoginPageV1
     const hpv1 = new HomePageV1
+    const cpv1 = new ChartPageV1
 
-    beforeEach(() => {
-        lpv1.visitLoginPageV1()
-    })
+    // beforeEach(() => {
+    //     lpv1.visitLoginPageV1()
+    // })
 
     it('Login page UI elements test', () => {
+        lpv1.visitLoginPageV1()
         lpv1.authWrapper().should('be.visible')
         lpv1.logo().should('be.visible')
         lpv1.logoArea().should('be.visible')
@@ -56,14 +59,28 @@ describe('Hackathon App V1 tests', () => {
         lpv1.passwordField().type('test')
         lpv1.loginButton().click()
         hpv1.financialOverviewHeader().should('be.visible').should('contains.text', 'Financial Overview')
-        hpv1.logoIcon().should('be.visible')
     })
 
     it('Table sort test', () => {
+        hpv1.tableAmountHeader().click()
+        hpv1.amount1().should('be.visible').should('have.text', '- 320.00 USD')
+        hpv1.amount2().should('be.visible').should('have.text', '- 244.00 USD')
+        hpv1.amount3().should('be.visible').should('have.text', '+ 17.99 USD')
+        hpv1.amount4().should('be.visible').should('have.text', '+ 340.00 USD')
+        hpv1.amount5().should('be.visible').should('have.text', '+ 952.23 USD')
+        hpv1.amount6().should('be.visible').should('have.text', '+ 1,250.00 USD')
 
+        //How to validatae "Each row’s data stayed in tact after the sorting" 
     })
 
     it('Canvas chart test', () => {
+        hpv1.compareExpenses().click()
+
+        //Validate that the bar chart and representing that data (number of bars and their heights)
+
+        cpv1.showDataForNextYearButton().click()
+
+        //Verify that this data set is added for the year 2019.
 
     })
 
