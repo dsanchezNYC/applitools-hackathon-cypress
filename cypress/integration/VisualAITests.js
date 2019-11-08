@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { HackathonAppV2 } from "../page-objects/hackathon-app-v2.spec"
+import { LoginPageV2 } from "../page-objects/v2-login-page.spec"
 
 // You have just been added to the team: Applitools Hackathon 2019 (daniel.sanchez@silverlinecrm.com)
 // You can access the team's dashboard here: https://eyes.applitools.com/?accountId=cB2zgF7jCEaBPGAD3jdcKg~~&userName=daniel.sanchez%40silverlinecrm.com&source=&
@@ -9,7 +9,9 @@ import { HackathonAppV2 } from "../page-objects/hackathon-app-v2.spec"
 
 describe('Hackathon App V2 tests', () => {
 
-    const lpv1 = new HackathonAppV2
+    const lpv2 = new LoginPageV2
+    const hpv2 = new HomePageV2
+    const cpv2 = new ChartPageV2
 
     it('Login page UI elements test', () => {
 
