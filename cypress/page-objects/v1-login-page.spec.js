@@ -1,4 +1,4 @@
-export class HackathonAppV1 {
+export class LoginPageV1 {
 
     visitLoginPageV1(){
         cy.viewport(1440,900)
@@ -26,9 +26,8 @@ export class HackathonAppV1 {
     }
 
     errorUsernamePassword(){
-        return cy.get('#random_id_2') //Update for random locator
+        return cy.get('[class="alert alert-warning"]') //Update for random locator
     }
-    
 
     formArea(){
         return cy.get('form')

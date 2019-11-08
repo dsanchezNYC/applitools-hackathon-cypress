@@ -1,10 +1,12 @@
 /// <reference types="cypress" />
 
-import { HackathonAppV1 } from "../page-objects/hackathon-app-v1.spec"
+import { LoginPageV1 } from "../page-objects/v1-login-page.spec"
+import { HomePageV1 } from "../page-objects/v1-home-page.spec"
 
 describe('Hackathon App V1 tests', () => {
 
-    const lpv1 = new HackathonAppV1
+    const lpv1 = new LoginPageV1
+    const hpv1 = new HomePageV1
 
     beforeEach(() => {
         lpv1.visitLoginPageV1()
@@ -34,23 +36,27 @@ describe('Hackathon App V1 tests', () => {
     })
 
     it('Data-driven test', () => {
-        //a. If you don’t enter the username and password and click the login button, it should throw an error
+        //a. If user doesn’t enter the username and password and click the login button, it should throw an error
         lpv1.loginButton().click()
-        lpv1.errorUsernamePassword().should('be.visible')
+        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Both Username and Password must be present ')
 
-        //b. If you only enter the username and click the login button, it should throw an error
+        //b. If user only enters the username and clicks the login button, it should throw an error
         lpv1.usernameField().type('test')
         lpv1.loginButton().click()
+        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Password must be present')
 
-        //c. If you only enter the password and click the login button, it should throw an error
+        //c. If user only enters the password and clicks the login button, it should throw an error
+        lpv1.usernameField().clear()
         lpv1.passwordField().type('test')
         lpv1.loginButton().click()
+        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Username must be present')
 
-        //d. If you enter both username (any value) and password (any value), it should log you in.
-        lpv1.usernameIcon().type('test')
+        //d. If user enters both username (any value) and password (any value), it should log you in.
+        lpv1.usernameField().type('test')
         lpv1.passwordField().type('test')
         lpv1.loginButton().click()
-
+        hpv1.financialOverviewHeader().should('be.visible').should('contains.text', 'Financial Overview')
+        hpv1.logoIcon().should('be.visible')
     })
 
     it('Table sort test', () => {

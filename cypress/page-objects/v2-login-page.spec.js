@@ -1,4 +1,4 @@
-export class HackathonAppV2 {
+export class LoginPageV2 {
 
     visitLoginPageV2(){
         cy.viewport(1440,900)
