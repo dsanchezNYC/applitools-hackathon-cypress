@@ -2,8 +2,8 @@ export class LoginPage {
 
     visitLoginPage(){
         cy.viewport(1440,900)
-        cy.visit('https://demo.applitools.com/hackathon.html?showAd=true') //V1
-        //cy.visit('https://demo.applitools.com/hackathonV2.html') //V2
+        //cy.visit('https://demo.applitools.com/hackathon.html?showAd=true') //V1
+        cy.visit('https://demo.applitools.com/hackathonV2.html') //V2
         
     }
 
