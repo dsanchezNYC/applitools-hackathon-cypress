@@ -1,6 +1,4 @@
-export class HomePageV1 {
-
-    //Header Locators
+export class HomePage {
 
     logoIcon(){
         return cy.get('.logo-element')

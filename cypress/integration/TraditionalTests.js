@@ -1,21 +1,21 @@
 /// <reference types="cypress" />
 
-import { LoginPageV1 } from "../page-objects/v1-login-page.spec"
-import { HomePageV1 } from "../page-objects/v1-home-page.spec"
-import { ChartPageV1 } from "../page-objects/v1-chart-page.spec"
+import { LoginPage } from "../page-objects/login-page.spec"
+import { HomePage } from "../page-objects/home-page.spec"
+import { ChartPage } from "../page-objects/chart-page.spec"
 
 describe('Hackathon App V1 tests', () => {
 
-    const lpv1 = new LoginPageV1
-    const hpv1 = new HomePageV1
-    const cpv1 = new ChartPageV1
+    const lpv1 = new LoginPage
+    const hpv1 = new HomePage
+    const cpv1 = new ChartPage
 
     // beforeEach(() => {
     //     lpv1.visitLoginPageV1()
     // })
 
     it('Login page UI elements test', () => {
-        lpv1.visitLoginPageV1()
+        lpv1.visitLoginPage()
         lpv1.authWrapper().should('be.visible')
         lpv1.logo().should('be.visible')
         lpv1.logoArea().should('be.visible')

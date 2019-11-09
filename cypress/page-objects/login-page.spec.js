@@ -1,8 +1,10 @@
-export class LoginPageV1 {
+export class LoginPage {
 
-    visitLoginPageV1(){
+    visitLoginPage(){
         cy.viewport(1440,900)
-        cy.visit('https://demo.applitools.com/hackathon.html') //Version 1
+        cy.visit('https://demo.applitools.com/hackathon.html') //V1
+        //cy.visit('https://demo.applitools.com/hackathonV2.html') //V2
+        
     }
 
     authWrapper(){
@@ -26,7 +28,7 @@ export class LoginPageV1 {
     }
 
     errorUsernamePassword(){
-        return cy.get('[class="alert alert-warning"]') //Update for random locator
+        return cy.get('[class="alert alert-warning"]')
     }
 
     formArea(){
