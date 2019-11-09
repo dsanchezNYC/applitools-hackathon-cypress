@@ -10,19 +10,22 @@ describe('Traditional tests', () => {
     const hp = new HomePage
     const cp = new ChartPage
 
-    it('Login page UI elements test', () => {
+    before(() => {
         lp.visitLoginPage()
+    })
+
+    it('Login page UI elements test', () => {
         lp.authWrapper().should('be.visible')
         lp.logo().should('be.visible')
         lp.logoArea().should('be.visible')
-        lp.loginFormHeader().should('be.visible').should('contain.text', 'Login Form')
+        lp.loginFormHeader().should('be.visible').should('contain.text', 'Logout Form')
         lp.alertEmpty().should('be.visible')
         lp.formArea().should('be.visible')
         lp.usernameLabel().should('be.visible').should('contain.text', 'Username')
-        lp.usernameIcon().should('be.visible')
+        //lp.usernameIcon().should('be.visible') - Removed from V2 version
         lp.usernameField().should('be.visible').should('be.enabled')
-        lp.passwordLabel().should('be.visible').should('contain.text', 'Password')
-        lp.passwordIcon().should('be.visible')
+        lp.passwordLabel().should('be.visible').should('contain.text', 'PwdRemember Me')
+        //lp.passwordIcon().should('be.visible') - Removed from V2 version
         lp.passwordField().should('be.visible').should('be.enabled')
         lp.loginButton().should('be.visible').should('contain.text', 'Log In')
         lp.rememberMeLabel().should('be.visible').should('contain.text', 'Remember Me')
@@ -31,13 +34,13 @@ describe('Traditional tests', () => {
         lp.socialButtonArea().should('be.visible')
         lp.twitterIcon().should('be.visible')
         lp.facebookIcon().should('be.visible')
-        lp.linkedInIcon().should('be.visible')
+        //lp.linkedInIcon().should('be.visible') - Removed from V2 version
     })
 
     it('Data-driven test', () => {
         //a. If user doesn’t enter the username and password and click the login button, it should throw an error
         lp.loginButton().click()
-        lp.errorUsernamePassword().should('be.visible').should('have.text', 'Both Username and Password must be present ')
+        lp.errorUsernamePassword().should('be.visible').should('have.text', 'Please enter both username and password')
 
         //b. If user only enters the username and clicks the login button, it should throw an error
         lp.usernameField().type('test')
@@ -66,7 +69,7 @@ describe('Traditional tests', () => {
         hp.amount5().should('be.visible').should('have.text', '+ 952.23 USD')
         hp.amount6().should('be.visible').should('have.text', '+ 1,250.00 USD')
 
-        //How to validatae "Each row’s data stayed in tact after the sorting" 
+        //How to validate "Each row’s data stayed in tact after the sorting" 
     })
 
     it('Canvas chart test', () => {
@@ -94,8 +97,6 @@ describe('Traditional tests', () => {
         lp.loginButton().click()
         lp.flashSaleImage1().should('be.visible')
         lp.flashSaleImage2().should('be.visible')
-
-
     })
 
 })
