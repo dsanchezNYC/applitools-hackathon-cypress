@@ -8,7 +8,8 @@ These instructions (at some point) will get you a copy of the project up and run
 
 ### Pre-Requisites
 
-Hmmm, not sure yet. 
+Applitools Eyes user account connected to team: Applitools Hackathon 2019.
+
 
 ```
 Examples... TBD

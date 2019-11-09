@@ -8,6 +8,12 @@ export class HomePage {
         return cy.get('.compact > .element-header')   
     }
 
+    compareExpenses(){
+        return cy.get('#showExpensesChart')
+    }
+
+    // Table locators 
+    
     tableAmountHeader(){
         return cy.get('#amount')
     }
@@ -36,8 +42,8 @@ export class HomePage {
         return cy.get(':nth-child(6) > .text-right > .text-success')
     }
 
-    compareExpenses(){
-        return cy.get('#showExpensesChart')
+    descriptions(){
+        return cy.get('.cell-with-media')
     }
     
 }

@@ -4,87 +4,97 @@ import { LoginPage } from "../page-objects/login-page.spec"
 import { HomePage } from "../page-objects/home-page.spec"
 import { ChartPage } from "../page-objects/chart-page.spec"
 
-describe('Hackathon App V1 tests', () => {
+describe('Traditional tests', () => {
 
-    const lpv1 = new LoginPage
-    const hpv1 = new HomePage
-    const cpv1 = new ChartPage
-
-    // beforeEach(() => {
-    //     lpv1.visitLoginPageV1()
-    // })
+    const lp = new LoginPage
+    const hp = new HomePage
+    const cp = new ChartPage
 
     it('Login page UI elements test', () => {
-        lpv1.visitLoginPage()
-        lpv1.authWrapper().should('be.visible')
-        lpv1.logo().should('be.visible')
-        lpv1.logoArea().should('be.visible')
-        lpv1.loginFormHeader().should('be.visible').should('contain.text', 'Login Form')
-        lpv1.alertEmpty().should('be.visible')
-        lpv1.formArea().should('be.visible')
-        lpv1.usernameLabel().should('be.visible').should('contain.text', 'Username')
-        lpv1.usernameIcon().should('be.visible')
-        lpv1.usernameField().should('be.visible').should('be.enabled')
-        lpv1.passwordLabel().should('be.visible').should('contain.text', 'Password')
-        lpv1.passwordIcon().should('be.visible')
-        lpv1.passwordField().should('be.visible').should('be.enabled')
-        lpv1.loginButton().should('be.visible').should('contain.text', 'Log In')
-        lpv1.rememberMeLabel().should('be.visible').should('contain.text', 'Remember Me')
-        lpv1.rememberMeCheckbox().should('be.visible').should('not.be.checked')
-        lpv1.buttonArea().should('be.visible')
-        lpv1.socialButtonArea().should('be.visible')
-        lpv1.twitterIcon().should('be.visible')
-        lpv1.facebookIcon().should('be.visible')
-        lpv1.linkedInIcon().should('be.visible')
+        lp.visitLoginPage()
+        lp.authWrapper().should('be.visible')
+        lp.logo().should('be.visible')
+        lp.logoArea().should('be.visible')
+        lp.loginFormHeader().should('be.visible').should('contain.text', 'Login Form')
+        lp.alertEmpty().should('be.visible')
+        lp.formArea().should('be.visible')
+        lp.usernameLabel().should('be.visible').should('contain.text', 'Username')
+        lp.usernameIcon().should('be.visible')
+        lp.usernameField().should('be.visible').should('be.enabled')
+        lp.passwordLabel().should('be.visible').should('contain.text', 'Password')
+        lp.passwordIcon().should('be.visible')
+        lp.passwordField().should('be.visible').should('be.enabled')
+        lp.loginButton().should('be.visible').should('contain.text', 'Log In')
+        lp.rememberMeLabel().should('be.visible').should('contain.text', 'Remember Me')
+        lp.rememberMeCheckbox().should('be.visible').should('not.be.checked')
+        lp.buttonArea().should('be.visible')
+        lp.socialButtonArea().should('be.visible')
+        lp.twitterIcon().should('be.visible')
+        lp.facebookIcon().should('be.visible')
+        lp.linkedInIcon().should('be.visible')
     })
 
     it('Data-driven test', () => {
         //a. If user doesn’t enter the username and password and click the login button, it should throw an error
-        lpv1.loginButton().click()
-        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Both Username and Password must be present ')
+        lp.loginButton().click()
+        lp.errorUsernamePassword().should('be.visible').should('have.text', 'Both Username and Password must be present ')
 
         //b. If user only enters the username and clicks the login button, it should throw an error
-        lpv1.usernameField().type('test')
-        lpv1.loginButton().click()
-        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Password must be present')
+        lp.usernameField().type('test')
+        lp.loginButton().click()
+        lp.errorUsernamePassword().should('be.visible').should('have.text', 'Password must be present')
 
         //c. If user only enters the password and clicks the login button, it should throw an error
-        lpv1.usernameField().clear()
-        lpv1.passwordField().type('test')
-        lpv1.loginButton().click()
-        lpv1.errorUsernamePassword().should('be.visible').should('have.text', 'Username must be present')
+        lp.usernameField().clear()
+        lp.passwordField().type('test')
+        lp.loginButton().click()
+        lp.errorUsernamePassword().should('be.visible').should('have.text', 'Username must be present')
 
         //d. If user enters both username (any value) and password (any value), it should log you in.
-        lpv1.usernameField().type('test')
-        lpv1.passwordField().type('test')
-        lpv1.loginButton().click()
-        hpv1.financialOverviewHeader().should('be.visible').should('contains.text', 'Financial Overview')
+        lp.usernameField().type('test')
+        lp.passwordField().type('test')
+        lp.loginButton().click()
+        hp.financialOverviewHeader().should('be.visible').should('contains.text', 'Financial Overview')
     })
 
     it('Table sort test', () => {
-        hpv1.tableAmountHeader().click()
-        hpv1.amount1().should('be.visible').should('have.text', '- 320.00 USD')
-        hpv1.amount2().should('be.visible').should('have.text', '- 244.00 USD')
-        hpv1.amount3().should('be.visible').should('have.text', '+ 17.99 USD')
-        hpv1.amount4().should('be.visible').should('have.text', '+ 340.00 USD')
-        hpv1.amount5().should('be.visible').should('have.text', '+ 952.23 USD')
-        hpv1.amount6().should('be.visible').should('have.text', '+ 1,250.00 USD')
+        hp.tableAmountHeader().click()
+        hp.amount1().should('be.visible').should('have.text', '- 320.00 USD')
+        hp.amount2().should('be.visible').should('have.text', '- 244.00 USD')
+        hp.amount3().should('be.visible').should('have.text', '+ 17.99 USD')
+        hp.amount4().should('be.visible').should('have.text', '+ 340.00 USD')
+        hp.amount5().should('be.visible').should('have.text', '+ 952.23 USD')
+        hp.amount6().should('be.visible').should('have.text', '+ 1,250.00 USD')
 
         //How to validatae "Each row’s data stayed in tact after the sorting" 
     })
 
     it('Canvas chart test', () => {
-        hpv1.compareExpenses().click()
+        hp.compareExpenses().click()
 
-        //Validate that the bar chart and representing that data (number of bars and their heights)
+        // Validate that the bar chart and representing that data (number of bars and their heights)
+        //
+        // *** Unable to use validate this via traditional testing ***
+        // 
 
-        cpv1.showDataForNextYearButton().click()
+        cp.showDataForNextYearButton().click()
 
         //Verify that this data set is added for the year 2019.
+        //
+        // *** Unable to use validate this via traditional testing ***
+        //
 
     })
 
     it('Dynamic content test', () => {
+
+        lp.visitLoginPage()
+        lp.usernameField().type('test')
+        lp.passwordField().type('test')
+        lp.loginButton().click()
+        lp.flashSaleImage1().should('be.visible')
+        lp.flashSaleImage2().should('be.visible')
+
 
     })
 

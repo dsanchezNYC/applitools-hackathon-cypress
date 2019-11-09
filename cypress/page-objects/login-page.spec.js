@@ -2,7 +2,7 @@ export class LoginPage {
 
     visitLoginPage(){
         cy.viewport(1440,900)
-        cy.visit('https://demo.applitools.com/hackathon.html') //V1
+        cy.visit('https://demo.applitools.com/hackathon.html?showAd=true') //V1
         //cy.visit('https://demo.applitools.com/hackathonV2.html') //V2
         
     }
@@ -91,26 +91,12 @@ export class LoginPage {
         return cy.get(':nth-child(3) > img')
     }
 
+    flashSaleImage1(){
+        return cy.get('#flashSale > img')
+    }    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    flashSaleImage2(){
+        return cy.get('#flashSale2 > img')
+    }
 
 }
