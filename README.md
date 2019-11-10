@@ -1,51 +1,48 @@
-# Applitools Visual AI Rockstar Hackathon Cypress Tests 
+# Applitools Hackathon - Cypress Tests 
 
-Cypress tests created for the Applitools hackthon (https://applitools.com/hackathon-instructions)
+Cypress tests created for the Applitools Visual AI Rockstar Hackthon 11/2019. [See full details at here](https://applitools.com/hackathon-instructions).
 
-## Getting Started
+***
 
-These instructions (at some point) will get you a copy of the project up and running on your local machine.
+# Table of Contents
 
-### Pre-Requisites
+* [Getting Started](#getting-started)
+* [Pre-Requisites](#pre-req)
+* [Installing & Running Tests](#install)
+* [Built With](#built)
+* [Author](#author)
+* [Acknowledgements](#ack)
 
-Applitools Eyes user account connected to team: Applitools Hackathon 2019.
+***
 
+## <a name="getting-started"></a>Getting Started
 
-```
-Examples... TBD
-```
+This test suite is split in to two test files:
 
-### Installing
+1. TraditionalTests.js - Contains five (5) 'traditional' tests, validated via Cypress assertions.
+2. VisualAITests.js - Contains five (5) visual AI tests, validated via visual assertions in Applitools Eyes UI. 
 
-Clone the repo to your local machine
-Then do other stuff... 
+### <a name="pre-req"></a>Pre-Requisites
 
-This is where the steps will b
+* Experience with Cypress.
+* Applitools Eyes user account connected to team: Applitools Hackathon 2019.
 
-```
-More examples TBD
-```
+### <a name="install"></a>Installing & Running Tests
 
-And repeat
+1. Clone the repo to your local machine.
+2. 
 
-```
-More more
-```
-
-## Running the tests
-
-You know how to use Cypress right?
-
-## Built With
+## <a name="built"></a>Built With
 
 * [Cypress IO](https://www.cypress.io/) - Testing framework
 * [Applitools Eyes](https://applitools.com/blog/applitools-eyes-introduction-to-automated-visual-ui-testing) - Visual testing tool 
 
-## Authors
+## <a name="author"></a>Author
 
 * **Daniel Sanchez** - *Applitools Hackathon* - [Daniel Sanchez NYC](https://github.com/dsanchezNYC)
 
-## Acknowledgments
+# <a name="ack"></a>Acknowledgments
 
-* Shout out my coworker Dmitry Rybalchenko 
-* Shout out Applitools, Angie Jones and whole Applitools team for putting this together
+* Shout out my coworker Dmitry Rybalchenko.
+* Shout out Applitools, Angie Jones and whole Applitools team for putting this together.
+* The Test Automation University from Applitools + the Cypress course by Gil. 
