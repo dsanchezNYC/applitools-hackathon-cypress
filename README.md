@@ -24,13 +24,18 @@ This test suite is split in to two test files:
 
 ### <a name="pre-req"></a>Pre-Requisites
 
-* Experience with Cypress.
+* Experience with Cypress
+* Experience with VS Code
 * Applitools Eyes user account connected to team: Applitools Hackathon 2019.
 
 ### <a name="install"></a>Installing & Running Tests
 
 1. Clone the repo to your local machine.
-2. 
+2. Open project using VS Code.
+3. In terminal, enter command "npx cypress open".
+4. From Cypress UI, click either TraditionalTests or VisualAITests.
+
+At this point the tests will execute via Cypress UI in Chrome browser. 
 
 ## <a name="built"></a>Built With
 
