@@ -24,7 +24,6 @@ This test suite is split in to two test files:
 
 ### <a name="pre-req"></a>Pre-Requisites
 
-* Node JS installed
 * Experience with Cypress
 * Experience with VS Code
 * Applitools Eyes user account connected to team: Applitools Hackathon 2019.
