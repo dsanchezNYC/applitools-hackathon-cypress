@@ -18,13 +18,13 @@ describe('Traditional tests', () => {
         lp.authWrapper().should('be.visible')
         lp.logo().should('be.visible')
         lp.logoArea().should('be.visible')
-        lp.loginFormHeader().should('be.visible').should('contain.text', 'Logout Form')
+        lp.loginFormHeader().should('be.visible').should('contain.text', 'Login Form')
         lp.alertEmpty().should('be.visible')
         lp.formArea().should('be.visible')
         lp.usernameLabel().should('be.visible').should('contain.text', 'Username')
         //lp.usernameIcon().should('be.visible') - Removed from V2 version
         lp.usernameField().should('be.visible').should('be.enabled')
-        lp.passwordLabel().should('be.visible').should('contain.text', 'PwdRemember Me')
+        lp.passwordLabel().should('be.visible').should('contain.text', 'PwdRemember Me') //Bug? TBD
         //lp.passwordIcon().should('be.visible') - Removed from V2 version
         lp.passwordField().should('be.visible').should('be.enabled')
         lp.loginButton().should('be.visible').should('contain.text', 'Log In')
