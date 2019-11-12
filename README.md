@@ -32,8 +32,9 @@ This test suite is split in to two test files:
 
 1. Clone the repo to your local machine.
 2. Open project using VS Code.
-3. In terminal, enter command "npx cypress open".
-4. From Cypress UI, click either TraditionalTests or VisualAITests.
+3. In terminal, enter command "npx cypress install --force".
+4. In terminal, enter command "npx cypress open".
+5. From Cypress UI, click either TraditionalTests or VisualAITests.
 
 At this point the tests will execute via Cypress UI in Chrome browser. 
 
