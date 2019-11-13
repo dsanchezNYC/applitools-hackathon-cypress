@@ -18,14 +18,14 @@ describe('Traditional tests', () => {
         lp.authWrapper().should('be.visible')
         lp.logo().should('be.visible')
         lp.logoArea().should('be.visible')
-        lp.loginFormHeader().should('be.visible').should('contain.text', 'Login Form')
+        lp.loginFormHeader().should('be.visible').should('contain.text', 'Login Form') //Bug in V2
         lp.alertEmpty().should('be.visible')
         lp.formArea().should('be.visible')
         lp.usernameLabel().should('be.visible').should('contain.text', 'Username')
-        //lp.usernameIcon().should('be.visible') - Removed from V2 version
+        //lp.usernameIcon().should('be.visible') - Removed from V2 version?
         lp.usernameField().should('be.visible').should('be.enabled')
-        lp.passwordLabel().should('be.visible').should('contain.text', 'PwdRemember Me') //Bug? TBD
-        //lp.passwordIcon().should('be.visible') - Removed from V2 version
+        lp.passwordLabel().should('be.visible').should('contain.text', 'Password') //Bug in V2
+        //lp.passwordIcon().should('be.visible') - Removed from V2 version?
         lp.passwordField().should('be.visible').should('be.enabled')
         lp.loginButton().should('be.visible').should('contain.text', 'Log In')
         lp.rememberMeLabel().should('be.visible').should('contain.text', 'Remember Me')
@@ -34,7 +34,7 @@ describe('Traditional tests', () => {
         lp.socialButtonArea().should('be.visible')
         lp.twitterIcon().should('be.visible')
         lp.facebookIcon().should('be.visible')
-        //lp.linkedInIcon().should('be.visible') - Removed from V2 version
+        //lp.linkedInIcon().should('be.visible') - Removed from V2 version?
     })
 
     it('Data-driven test', () => {
@@ -62,14 +62,17 @@ describe('Traditional tests', () => {
 
     it('Table sort test', () => {
         hp.tableAmountHeader().click()
-        hp.amount1().should('be.visible').should('have.text', '- 320.00 USD')
-        hp.amount2().should('be.visible').should('have.text', '- 244.00 USD')
+        hp.amount1().should('be.visible').should('have.text', '- 320.00 USD') //Bug in V2 where table doesn't sort correctly
+        hp.amount2().should('be.visible').should('have.text', '- 244.00 USD') 
         hp.amount3().should('be.visible').should('have.text', '+ 17.99 USD')
         hp.amount4().should('be.visible').should('have.text', '+ 340.00 USD')
         hp.amount5().should('be.visible').should('have.text', '+ 952.23 USD')
         hp.amount6().should('be.visible').should('have.text', '+ 1,250.00 USD')
 
         //How to validate "Each row’s data stayed in tact after the sorting" 
+        //
+        // *** Did not validate this via traditional testing ***
+        // 
     })
 
     it('Canvas chart test', () => {
@@ -77,14 +80,14 @@ describe('Traditional tests', () => {
 
         // Validate that the bar chart and representing that data (number of bars and their heights)
         //
-        // *** Unable to use validate this via traditional testing ***
+        // *** Did not validate this via traditional testing ***
         // 
 
         cp.showDataForNextYearButton().click()
 
         //Verify that this data set is added for the year 2019.
         //
-        // *** Unable to use validate this via traditional testing ***
+        // *** Did not validate this via traditional testing ***
         //
 
     })
@@ -96,7 +99,7 @@ describe('Traditional tests', () => {
         lp.passwordField().type('test')
         lp.loginButton().click()
         lp.flashSaleImage1().should('be.visible')
-        lp.flashSaleImage2().should('be.visible')
+        lp.flashSaleImage2().should('be.visible') //Bug in V2 where one gif doesn't load
     })
 
 })

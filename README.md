@@ -32,12 +32,11 @@ This test suite is split in to two test files:
 
 1. Clone the repo to your local machine.
 2. Open project using VS Code.
-3. In terminal, enter command "npx cypress install --force".
-4. In terminal, enter command "npx cypress open".
-5. In terminal, "export APPLITOOLS_API_KEY='3NrJB25IVoPS1k85TXUb102qACnCac93iYpjAX8E3E8sw110'" (Mac) or "set APPLITOOLS_API_KEY='3NrJB25IVoPS1k85TXUb102qACnCac93iYpjAX8E3E8sw110'" (Windows)
-6. From Cypress UI, click either TraditionalTests or VisualAITests.
-
-At this point the tests will execute via Cypress UI in Chrome browser. 
+3. In terminal, navigate to project folder, enter command "npx cypress install --force".
+4. In terminal, navigate to project folder, enter command "npx cypress open".
+5. In terminal, navigate to project folder, "export APPLITOOLS_API_KEY='3NrJB25IVoPS1k85TXUb102qACnCac93iYpjAX8E3E8sw110'" (Mac) or "set APPLITOOLS_API_KEY='3NrJB25IVoPS1k85TXUb102qACnCac93iYpjAX8E3E8sw110'" (Windows)
+6. From Cypress UI, click either TraditionalTests or VisualAITests. At this point the tests will execute via Cypress UI in Chrome browser. 
+7. To view visual test results/screenshots, log in to [Applitools eyes](https://eyes.applitools.com/).
 
 ## <a name="built"></a>Built With
 
